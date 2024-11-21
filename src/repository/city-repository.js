@@ -7,6 +7,7 @@ const { City } =require('../models/index');
             return city;
         }
         catch(error){
+          console.log("Something went wrong in the repository layer");
            throw{error};
         }
     }
@@ -18,11 +19,39 @@ const { City } =require('../models/index');
                 id:cityId
             }
           });
+          return true;
         }
         catch(error){
+          console.log("Something went wrong in the repository layer");
          throw {error};
         }
     }
+
+    async updateCity(cityId,data){ // {name:"newYork"}
+      try{
+        const city=await City.update(data,{
+          where:{
+            id:cityId
+          }
+        });
+        return city;
+      } catch(error){
+        console.log("Something went wrong in the repository layer");
+        throw {error};
+      }
+    }
+ 
+
+  async getCity(cityId){
+    try{
+      const city=await City.findByPk(cityId);
+      return city;
+    } catch(error){
+      console.log("Something went wrong in the repository layer");
+      throw {error};
+    }
+  }
+
  }
 
  module.exports=CityRepository;
