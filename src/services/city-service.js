@@ -2,7 +2,7 @@ const { CityRepository }= require('../repository/index');
 
 class CityService{
     constructor(){
-        this.cityRepository= new CityRepository();
+        this.cityRepository= new CityRepository(); // "Whenever someone uses CityService, they'll also get access to CityRepository so it can do the database work."
     }
 
     async createCity(data){
