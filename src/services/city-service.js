@@ -7,7 +7,8 @@ class CityService{
 
     async createCity(data){
         try{
-         const city=await this.cityRepository.createCity(data);
+         const city=await this.cityRepository.createCity(data); // It calls the createCity method from the Repository Layer (this.cityRepository.createCity(data)), which performs the actual database interaction.
+// The data argument is passed to the repository's createCity method, and the city is returned from there.
          return city;
         } catch(error){
          console.log("Something went wrong at service layer");
