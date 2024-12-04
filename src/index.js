@@ -2,6 +2,7 @@ const express=require("express");
 const bodyParser=require("body-parser");
 const { PORT } = require('./config/serverconfig');
 
+const ApiRoutes=require('./routes/index');
 
 
 const setupAndStartServer=async()=>{
@@ -10,6 +11,7 @@ const setupAndStartServer=async()=>{
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
+    app.use('/api',ApiRoutes); // when we come to /api, we map ourself to ApiRoutes
     
     app.listen(PORT,async()=>{
         console.log(`Server started at ${PORT}`);
