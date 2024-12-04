@@ -29,11 +29,18 @@ const { City } =require('../models/index');
 
     async updateCity(cityId,data){ // {name:"newYork"}
       try{
-        const city=await City.update(data,{
-          where:{
-            id:cityId
-          }
-        });
+        // the below approach also works but will not return updated object.
+        // if we are using postgress then returning true can be used.else not
+        // const city=await City.update(data,{
+        //   where:{
+        //     id:cityId
+        //   },
+        //   returning:true,
+        //   plain:true
+        // });
+        const city=await City.findByPk(cityId);
+        city.name=data.name;
+        await city.save();
         return city;
       } catch(error){
         console.log("Something went wrong in the repository layer");
