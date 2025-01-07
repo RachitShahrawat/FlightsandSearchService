@@ -1,7 +1,7 @@
 const { City } =require('../models/index');
 
  class CityRepository{
-    async createCity({name}){
+    async createCity({name}){ // {name :"New delhi"}
         try{
             const city=await City.create({name});
             return city;
@@ -30,7 +30,7 @@ const { City } =require('../models/index');
     async updateCity(cityId,data){ // {name:"newYork"}
       try{
         // the below approach also works but will not return updated object.
-        // if we are using postgress then returning true can be used.else not
+        // if we are using postgress then returning true can be used,else not.
         // const city=await City.update(data,{
         //   where:{
         //     id:cityId
