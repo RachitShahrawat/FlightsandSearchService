@@ -8,6 +8,7 @@ router.post('/city',CityController.create); // whenever someone will call /v1/ci
 
 router.delete('/city/:id',CityController.destroy);
 router.get('/city/:id',CityController.get);
+router.get('/city',CityController.getAll);
 router.patch('/city/:id',CityController.update);
 
 module.exports=router;
