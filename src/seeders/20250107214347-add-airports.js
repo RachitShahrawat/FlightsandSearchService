@@ -18,14 +18,14 @@ module.exports = {
          name:
       'Kempegowda International Airport',
       cityId:2,
-      createdAt:new Date,
+      createdAt:new Date(),
       updatedAt:new Date(),
       },
       {
         name:
         'Chhatrapati Shivaji Maharaj International Airport',
         cityId:1,
-        createdAt:new Date,
+        createdAt:new Date(),
         updatedAt:new Date(),
       },
     ],{}
