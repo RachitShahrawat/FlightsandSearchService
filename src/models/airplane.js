@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
      type: DataTypes.STRING,
       allowNull: false,
     },
-    capacity:{ type:DataTypes.INTEGER,
+    capacity:{ 
+      type:DataTypes.INTEGER,
       allowNull: false,
       defaultValue:200
     }
