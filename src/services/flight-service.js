@@ -1,4 +1,5 @@
 const {FlightRespository,AirplaneRespository}=require('../repository/index');
+const {compareTime}=require('../utils/helper');
 
 
 class FlightService {
@@ -8,6 +9,9 @@ class FlightService {
     }
     async createFlight(data){
         try{
+            if(!compareTime(data. arrivalTime,data.departureTime)){
+                throw{error:'Arrival time cannot be less than departure time'};
+            }
             const airplane=await this.airplaneRespository.getAirplane(data.airplanId);
              const flight=await this.flightrespository.createFlight({...data,totalSeats:airplane.capacity
              });
