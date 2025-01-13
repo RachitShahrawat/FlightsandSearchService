@@ -1,4 +1,8 @@
+const { AirportRespository } = require('../repository');
+
 module.exports = {
  CityService:require('./city-service'),
- FlightService:require('./flight-service')
+ FlightService:require('./flight-service'),
+ AirportService:require('./airport-service'),
+ CrudService:require('./crud-service')
 }
