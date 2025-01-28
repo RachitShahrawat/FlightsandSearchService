@@ -48,7 +48,10 @@ class FlightRepository{
 
     async getFlight(flightId){
         try{
-            const flight=await Flights.findbyPk(flightId);
+            console.log(Flights);
+            console.log(Flights.findByPk);
+
+            const flight=await Flights.findByPk(flightId);
             return flight;
         }
         catch(error){
