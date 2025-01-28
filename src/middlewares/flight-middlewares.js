@@ -1,4 +1,4 @@
-const {ClientErrorsCodes}=require('../utils/error-codes');
+const {ClientErrorsCodes}=require('../utils/error-code');
 
 
 const validateCreateFlight=(req,res,next)=>{

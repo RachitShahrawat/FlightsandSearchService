@@ -18,5 +18,5 @@ const SuccessCodes=Object.freeze({
 module.exports={
     ClientErrorsCodes,
     ServerErrorsCodes,
-    SuccessCodes
-}
+    SuccessCodes,
+};
