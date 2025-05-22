@@ -60,7 +60,7 @@ const { City } =require('../models/index');
     }
   }
 
-  async getAllCities(filter){// filter(object) can be empty also.
+  async getAllCities(filter){// filter(object) can be empty also. if filter is empty we will return all cities. 
     try{
       if(filter.name){
         const cities=await City.findAll({
